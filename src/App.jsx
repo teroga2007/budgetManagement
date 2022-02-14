@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "./components/header";
+import Header from "./components/Header";
 import Modal from "./components/Modal";
 import ExpensesList from "./components/ExpensesList";
 import SpentNewIcon from "./img/nuevo-gasto.svg";
