@@ -76,6 +76,7 @@ const Modal = ({
                 id: '',
                 date: ''
                 })
+                hideModal()
             }
         }
     }

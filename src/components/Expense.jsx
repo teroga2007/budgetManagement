@@ -13,6 +13,7 @@ import {
   TrailingActions,
 } from 'react-swipeable-list'
 import 'react-swipeable-list/dist/styles.css'
+import Swal from 'sweetalert2'
 
 const iconsDictionary = {
     saving: SavingsIcon,
@@ -33,6 +34,14 @@ const Expense = ({ expense, setUpdateExpenses, deleteExpense }) => {
             day: '2-digit'
         }
         return newDate.toLocaleDateString('en-US', options)
+    }
+
+    const swipeAlert = () => {
+      Swal.fire({
+        text: 'Swipe RIGHT to delete or LEFT to update',
+        toast: true,
+        position: 'bottom-right'
+      })
     }
 
     const leadingActions = () => (
@@ -58,7 +67,7 @@ const Expense = ({ expense, setUpdateExpenses, deleteExpense }) => {
       leadingActions={leadingActions()}
       trailingActions={trailingActions()}
       >
-        <div className="gasto sombra">
+        <div className="gasto sombra" onClick={swipeAlert}>
           <div className="contenido-gasto">
             <img 
             src={iconsDictionary[expense.category]} 
