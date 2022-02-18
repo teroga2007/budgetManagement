@@ -21,7 +21,7 @@ function App() {
   const [filteredResult, setFilteredResult] = useState([])
   const [updateExpenses, setUpdateExpenses] = useState({})
   const [filter, setFilter] = useState('')
-
+    
   //Filtro
   useEffect(() => {
     const filteredExpenses = expenses.filter( expense => expense.category === filter)
@@ -104,13 +104,14 @@ function App() {
               filteredResult={filteredResult}
             />
           </main>
-          <div className="nuevo-gasto">
-            <img
-              src={SpentNewIcon}
-              alt="icono-nuevo-gasto"
-              onClick={handleNewSpent}
-            />
-          </div>
+            <div className="nuevo-gasto floater">
+              <img
+                src={SpentNewIcon}
+                alt="icono-nuevo-gasto"
+                onClick={handleNewSpent}
+                title="add new expense"
+              />
+            </div>
         </>
       )}
 
