@@ -26,6 +26,7 @@ const ExpensesList = ({
         ) : (
             <>
             <h2>{expenses.length ? 'Expenses' : 'There is not expenses yet'}</h2>
+            <p>{expenses.length ? 'Swipe the expense left to update or right to delete' : 'Click on the "+" button to add a new expense'}</p>
             {expenses.map( expense => (
               <Expense
                 key={expense.id}

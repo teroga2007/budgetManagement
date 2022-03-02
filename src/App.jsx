@@ -9,7 +9,7 @@ import Filter from "./components/Filter";
 
 function App() {
   const [budget, setBudget] = useState(
-    Number(localStorage.getItem('budget' ?? 0))
+    Number(localStorage.getItem('budget' ?? null))
   )
   const [isValid, setIsValid] = useState(false)
   const [modal, setModal] = useState(false)
@@ -21,7 +21,7 @@ function App() {
   const [filteredResult, setFilteredResult] = useState([])
   const [updateExpenses, setUpdateExpenses] = useState({})
   const [filter, setFilter] = useState('')
-    
+
   //Filtro
   useEffect(() => {
     const filteredExpenses = expenses.filter( expense => expense.category === filter)
@@ -38,7 +38,7 @@ function App() {
   }, [updateExpenses]);
 
   useEffect(() => {
-    localStorage.setItem('budget', budget ?? 0)
+    localStorage.setItem('budget', budget ?? null)
   }, [budget]);
 
   useEffect(() => {
@@ -47,8 +47,8 @@ function App() {
 
   //Guardar presupuesto en LS y enviar a página de datos si ya tiene uno válido guardado
   useEffect(() => {
-    const budgetLS = Number(localStorage.getItem('budget')) ?? 0
-    localStorage.setItem('budget', budget ?? 0)
+    const budgetLS = Number(localStorage.getItem('budget')) ?? null
+    localStorage.setItem('budget', budget ?? null)
     if(budgetLS>0){
       setIsValid(true)
     }

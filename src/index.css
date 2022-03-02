@@ -154,7 +154,6 @@ header h1 {
 
 .contenedor {
     width: 90%;
-    max-width: 80rem;
     margin: 0 auto;
 }
 .contenedor-presupuesto {
@@ -189,6 +188,7 @@ header h1 {
 .formulario input[type="number"].nuevo-presupuesto {
     font-size: 2.8rem;
     text-align: center;
+    max-width: 80vw;
 }
 
 .contenedor-presupuesto svg {
@@ -221,7 +221,7 @@ header h1 {
     border: none;
     background-color: #38bdf8;
     padding: 1rem;
-    width: 100%;
+    width: 50%;
     text-align: center;
     color: var(--blanco);
     text-transform: uppercase;
@@ -412,12 +412,30 @@ body .modal {
     text-align: right;
 }
 
+.contenedor-grafico{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 /*** SWAL **/
 .swal2-popup {
     font-size: 1.6rem !important;
 }
 
-
+@media screen and (max-width: 600px){
+    .gasto {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
 @media screen and (max-width: 765px){
     body {
         font-size: 1.4rem;
@@ -444,6 +462,35 @@ body .modal {
         padding: 0 5%;
     }
     .gasto {
-        justify-content: space-around;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .formulario .campo {
+        display: grid;
+        margin-bottom: 2rem;
+        min-width: 0%;
+    }
+    .contenedor {
+        width: 90%;
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 3rem
+    }
+    .formulario input[type="text"], .formulario input[type="number"] {
+        min-width: 80vw;
+        max-width: 80vw;
+    }
+    .formulario select {
+        min-width: 80vw;
+    }
+    .reset-app {
+        width: 100%;
     }
 }

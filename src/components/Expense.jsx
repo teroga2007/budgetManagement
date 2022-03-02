@@ -36,14 +36,6 @@ const Expense = ({ expense, setUpdateExpenses, deleteExpense }) => {
         return newDate.toLocaleDateString('en-US', options)
     }
 
-    const swipeAlert = () => {
-      Swal.fire({
-        text: 'Swipe RIGHT to delete or LEFT to update',
-        toast: true,
-        position: 'bottom-right'
-      })
-    }
-
     const leadingActions = () => (
       <LeadingActions>
         <SwipeAction onClick={() => setUpdateExpenses(expense)}>
@@ -67,7 +59,7 @@ const Expense = ({ expense, setUpdateExpenses, deleteExpense }) => {
       leadingActions={leadingActions()}
       trailingActions={trailingActions()}
       >
-        <div className="gasto sombra" onClick={swipeAlert}>
+        <div className="gasto sombra">
           <div className="contenido-gasto">
             <img 
             src={iconsDictionary[expense.category]} 

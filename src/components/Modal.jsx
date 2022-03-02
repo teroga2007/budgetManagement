@@ -116,7 +116,6 @@ const Modal = ({
                 id='amount'
                 type="number"
                 name='amount'
-                value={expense.amount}
                 placeholder='Add the amount you spent'
                 onChange={handleChange}
                 />

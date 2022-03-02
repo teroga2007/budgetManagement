@@ -51,11 +51,11 @@ const BudgetControl = ({ budget, expenses, setExpenses, setBudget, setIsValid })
 
   return (
     <div className='contenedor-presupuesto contener sombra dos-columnas'>
-        <div>
+        <div className='contenedor-grafico'>
             <CircularProgressbar
             styles={buildStyles({
-                pathColor: percent > 100 ? '#DC2626' : '#3F888F',
-                trailColor: '#3f888f78',
+                pathColor: percent > 100 ? '#DC2626' : '#38bdf8',
+                trailColor: '#3f888f30',
                 textColor: percent > 100 ? '#DC2626' : '#3F888F'
             })}
             value={percent}

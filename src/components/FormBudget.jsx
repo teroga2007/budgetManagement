@@ -25,8 +25,6 @@ const FormBudget = ({ budget, setBudget, setIsValid }) => {
             type="number"
             className="nuevo-presupuesto"
             placeholder="Add your initial budget"
-            min="5"
-            value={budget}
             onChange={ e => setBudget(Number(e.target.value))}
           />
         </div>
